@@ -10,7 +10,7 @@ import networkx as nx
 #%%
 
 if __name__ == "__main__":
-    G=nx.read_edgelist('data\edges_500.tsv',delimiter="\t",nodetype=int, data=(('weight',float),))
+    G=nx.read_edgelist('data/edges_500.tsv',delimiter="\t",nodetype=int, data=(('weight',float),))
     con_comp = list(nx.connected_components(G))
     n_con_comp = len(con_comp)
     
