@@ -7,6 +7,7 @@ Created on Fri Mar 10 17:24:18 2017
 
 import networkx as nx
 import pickle 
+import os
 
 #%%
 
@@ -20,4 +21,6 @@ if __name__ == "__main__":
     for i in range(0,n_con_comp):
         print (str(len(con_comp[i]))+"\t")
     print ("\n")
+    if not os.path.exists("output"):
+        os.makedirs("output")
     pickle.dump( con_comp, open( "output/connected_components.pickle", "wb" ) )
