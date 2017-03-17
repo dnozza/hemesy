@@ -17,14 +17,16 @@ def saveConnectedComponents(file_input, path_output):
     con_comp = list(nx.connected_components(G))
     n_con_comp = len(con_comp)
     
+    out_file = open(path_output+"\\temp.txt","w")    
     print ("Number of Connected Components : " + str(n_con_comp) + "\n")
-    print ("Distribution : ")
+    out_file.write("Distribution : ")
     for i in range(0,n_con_comp):
-        print (str(len(con_comp[i]))+"\t")
-    print ("\n")
+        out_file.write(str(len(con_comp[i]))+"\t")
+    out_file.write("\n")
     if not os.path.exists(path_output):
         os.makedirs(path_output)
-    pickle.dump( con_comp, open(path_output+"connected_components.pickle", "wb" ) )
+    pickle.dump( con_comp, open(path_output+"\\connected_components.pickle", "wb" ) )
+    out_file.close()
 
 
 if __name__ == "__main__":
