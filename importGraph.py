@@ -6,6 +6,7 @@ Created on Fri Mar 10 17:24:18 2017
 """
 
 import networkx as nx
+import pickle 
 
 #%%
 
@@ -19,3 +20,4 @@ if __name__ == "__main__":
     for i in range(0,n_con_comp):
         print (str(len(con_comp[i]))+"\t")
     print ("\n")
+    pickle.dump( con_comp, open( "output/connected_components.pickle", "wb" ) )
