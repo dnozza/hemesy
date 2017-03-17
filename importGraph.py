@@ -13,7 +13,7 @@ import sys, getopt
 #%%
 
 def saveConnectedComponents(file_input, path_output):
-	G=nx.read_edgelist(file_input,delimiter="\t",nodetype=int, data=(('weight',float),))
+    G=nx.read_edgelist(file_input,delimiter="\t",nodetype=int, data=(('weight',float),))
     con_comp = list(nx.connected_components(G))
     n_con_comp = len(con_comp)
     
